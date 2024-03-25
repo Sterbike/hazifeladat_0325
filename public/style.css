@@ -1,0 +1,92 @@
+body {
+  text-align: center;
+  background-color: beige;
+}
+div#cont {
+  background-color: rgb(196, 191, 146);
+  box-shadow: 1px 1px 3px inset black;
+  padding: 10px;
+  border-radius: 12px;
+}
+div#cont div {
+  background-color: rgb(216, 212, 183);
+  box-shadow: 1px 1px 3px black;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+div#cont div:hover {
+  background-color: beige;
+}
+
+#delete:hover{
+    border: 1px solid red;
+    color: red;
+}
+
+#modify:hover{
+    border: 1px solid green;
+    color: green;
+}
+
+.new {
+  background-color: rgb(196, 191, 146);
+  padding: 14px 40px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px dashed rgb(196, 191, 146);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.4s;
+}
+
+.new:nth-child(2){
+    color: rgb(150, 147, 114);
+  background-color: beige;
+  border: 2px dashed beige;
+    
+}
+
+
+.new:hover {
+  transition: 0.4s;
+  border: 2px dashed rgb(196, 191, 146);
+  background-color: #fff;
+  color: rgb(196, 191, 146);
+}
+
+.new:active {
+  background-color: rgb(168, 164, 128);
+  color: beige;
+}
+
+
+.input {
+
+    width: 98%;
+    text-align: center;
+    background-color: beige;
+    color: #242424;
+    padding: .15rem .5rem;
+    min-height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px dotted black;
+    line-height: 1.15;
+    box-shadow: 0px 10px 20px -18px;
+    margin: 5px;
+  }
+  
+  input:focus {
+    border-bottom: 1px solid black;
+    border-radius: 4px 4px 2px 2px;
+  }
+  
+  input:hover {
+    outline: 1px solid lightgrey;
+  }

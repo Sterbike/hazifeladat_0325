@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "id": "4e07",
+      "author": "Vaszary Gábor",
+      "title": "Hárman egymás ellen"
+    },
+    {
+      "id": "28f9",
+      "author": "J.R.R. Tolkien",
+      "title": "The Lord of the Rings"
+    },
+    {
+      "id": "39ac",
+      "author": "George Orwell",
+      "title": "1984"
+    },
+    {
+      "id": "1c5d",
+      "author": "Gabriel García Márquez",
+      "title": "One Hundred Years of Solitude"
+    },
+    {
+      "id": "7b2f",
+      "author": "Agatha Christie",
+      "title": "Murder on the Orient Express"
+    },
+    {
+      "id": "92d1",
+      "author": "Ernest Hemingway",
+      "title": "The Old Man and the Sea"
+    },
+    {
+      "id": "f0a4",
+      "author": "Harper Lee",
+      "title": "To Kill a Mockingbird"
+    },
+    {
+      "id": "1f35",
+      "author": "Leo Tolstoy",
+      "title": "War and Peace"
+    },
+    {
+      "id": "a8b9",
+      "author": "J.K. Rowling",
+      "title": "Harry Potter and the Philosopher's Stone"
+    },
+    {
+      "id": "3e6d",
+      "author": "F. Scott Fitzgerald",
+      "title": "The Great Gatsby"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

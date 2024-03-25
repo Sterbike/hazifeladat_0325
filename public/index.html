@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        var x = id => document.getElementById(id)
+        logic = {
+            f() {
+                fetch("http://localhost:3500/posts/").then(v => v.json()).then(v => {
+                    x("cont").innerHTML = v.map(row => `<div onclick="logic.g('${row.id}', '${row.author}', '${row.title}')">${row.author}: ${row.title}</div>`).join("")
+                })
+            },
+            g(id, author, title) {
+              x("cont").innerHTML=`
+              <form>
+                        <input class="input" autocomplete ="off" id="i1" placeholder="Szerző" value="${author}" /><br>
+                        <input class="input" autocomplete ="off" id="i2" placeholder="Cím" value="${title}" /><br>
+                        <div class="button" id="modify" onclick="logic.h('${id}')">Módosít</div>
+                        <div class="button" id="delete" onclick="logic.d('${id}')">Törlés</div>
+                        
+                    </form>
+                    <button class="new" onclick="logic.f()">Vissza</button>
+                    `
+                    document.getElementById("cim").innerHTML = "Bejegyzés szerkesztése";
+                  },
+                  h(id) {
+                tosend = {id, author: x("i1").value, title: x("i2").value}
+                fetch(`http://localhost:3500/posts/${id}`, {method: "PUT", headers: { "Content-Type": "application/json"}, body: JSON.stringify(tosend)})
+            },
+            d(id) {
+                todelete = {id, author: x("i1").value, title: x("i2").value}
+                fetch(`http://localhost:3500/posts/${id}`, {method: "DELETE", headers: { "Content-Type": "application/json"}, body: JSON.stringify(todelete)})
+            },
+            n(author, title){
+                x("cont").innerHTML=`
+                    <form>
+                        
+                        <input class="input" autocomplete ="off" id="i1" placeholder="Szerző"/><br>
+                        <input class="input" autocomplete ="off" id="i2" placeholder="Cím"/><br>
+                        <div class="button" onclick="logic.s()">Felvesz</div>
+                    </form>
+                    <button class="new" onclick="logic.f()">Vissza</button>
+                    `
+                    document.getElementById("cim").innerHTML = "Bejegyzés felvétele";
+            },
+            s() {
+                tosend = {author: x("i1").value, title: x("i2").value}
+                if(!tosend.author || !tosend.title) return
+                fetch(`http://localhost:3500/posts/`, {method: "POST", headers: { "Content-Type": "application/json"}, body: JSON.stringify(tosend)})
+            },
+        }
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="logic.f()">
+    <button class="new" onclick="logic.n()">Új bejegyzés felvétele</button>
+    <h1 id="cim">Bejegyzések</h1>
+    <div id="cont"></div>
+</body>
+</html>
